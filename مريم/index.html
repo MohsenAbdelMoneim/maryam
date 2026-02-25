@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maryam ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(135deg,#ff9a9e,#fecfef);overflow:hidden;color:white;position:relative;scroll-behavior:smooth;}
+
+/* 💖 HEARTS & 🌹 PETALS */
+.falling{position:fixed;top:-10%;pointer-events:none;font-size:20px;animation:fall linear infinite;}
+@keyframes fall{0%{transform:translateY(-10vh) rotate(0deg);opacity:0;}50%{opacity:1;}100%{transform:translateY(110vh) rotate(360deg);opacity:0;}}
+
+/* 🌟 SPARKLES */
+.sparkle{position:fixed;top:0;animation:float linear infinite;pointer-events:none;font-size:10px;color:white;}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-20px);}100%{transform:translateY(0);}}
+
+/* LOGIN */
+#login{height:100vh;display:flex;justify-content:center;align-items:center;transition:1s;}
+.card{background:rgba(255,255,255,0.2);backdrop-filter:blur(15px);padding:40px;border-radius:20px;text-align:center;box-shadow:0 0 20px rgba(255,255,255,0.5);}
+input,button{padding:10px;width:100%;border:none;border-radius:20px;margin-top:10px;text-align:center;font-size:1rem;}
+button{background:#ff4b6e;color:white;cursor:pointer;}
+#error{margin-top:10px;color:#8a0000;font-weight:bold;}
+
+/* MAIN */
+#main{display:none;height:100vh;overflow-y:auto;text-align:center;padding:20px;animation:fade 2s;}
+@keyframes fade{from{opacity:0;}to{opacity:1;}}
+.hero{font-family:'Dancing Script';font-size:3rem;animation:popGlow 1.5s forwards;text-shadow:0 0 10px #fff,0 0 20px #ff4b6e,0 0 30px #ff2e56;margin-top:20px;}
+@keyframes popGlow{0%{transform:scale(0.5);opacity:0;}100%{transform:scale(1);opacity:1;}}
+
+/* COUNTDOWN */
+.countdown{margin:20px auto;background:rgba(255,255,255,0.2);padding:15px;border-radius:20px;width:fit-content;}
+
+/* SECRET MESSAGE */
+.secret{display:none;margin-top:20px;background:rgba(255,255,255,0.2);padding:15px;border-radius:20px;transition:0.5s;font-size:1rem;}
+.secret.show{animation:shake 0.5s, glow 1.5s infinite alternate;box-shadow:0 0 25px #ff4b6e,0 0 50px #ff2e56;}
+@keyframes shake{0%{transform:translateX(0);}25%{transform:translateX(-5px);}50%{transform:translateX(5px);}75%{transform:translateX(-5px);}100%{transform:translateX(0);}}
+@keyframes glow{0%{box-shadow:0 0 25px #ff4b6e;}50%{box-shadow:0 0 50px #ff2e56;}100%{box-shadow:0 0 25px #ff4b6e;}}
+
+/* QUOTES */
+.quote{opacity:0;transition:2s;margin-top:10px;font-family:'Dancing Script';font-size:1.2rem;}
+.quote.show{opacity:1;}
+
+/* GALLERY */
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin:30px 0;}
+.gallery img{width:200px;height:200px;object-fit:cover;border-radius:15px;box-shadow:0 0 15px pink;transition:.3s;}
+.gallery img:hover{transform:scale(1.1);}
+
+/* VIDEO */
+.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,0.2);margin:20px auto;}
+.video-container iframe,.video-container video{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+
+/* RESPONSIVE */
+@media(max-width:768px){.hero{font-size:2.2rem;}.gallery img{width:45vw;height:45vw;}.secret{font-size:0.9rem;}}
+@media(max-width:480px){.hero{font-size:1.8rem;}.gallery img{width:90vw;height:90vw;}.secret{font-size:0.8rem;}}
+</style>
+</head>
+<body>
+
+<audio id="music" loop autoplay>
+<source src="romantic_song.mp3" type="audio/mp3">
+</audio>
+
+<!-- LOGIN -->
+<div id="login">
+<div class="card">
+<h2>Welcome Maryam ❤️</h2>
+<p>Enter your special date</p>
+<input type="password" id="pass" placeholder="DD/MM/YYYY">
+<button onclick="login()">Open My Heart 💖</button>
+<p id="error"></p>
+</div>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+<h1 class="hero" id="heroTitle">To My Beautiful Maryam ❤️</h1>
+
+<div class="countdown">
+🎂 Countdown: <div id="countdown"></div>
+</div>
+
+<button onclick="showSecret()">Click if you love me 💌</button>
+<div class="secret" id="secret">You are the most beautiful thing that ever happened to me ❤️</div>
+
+<div class="gallery">
+<img src="معرض/WhatsApp Image 2026-02-24 at 6.19.02 PM (1).jpeg" alt="Love 1">
+<img src="معرض/WhatsApp Image 2026-02-24 at 6.19.02 PM.jpeg" alt="Love 2">
+<img src="معرض/WhatsApp Image 2026-02-24 at 6.20.06 PM.jpeg" alt="Love 3">
+</div>
+<!-- VIDEO LOCAL -->
+<div class="video-container">
+  <video controls>
+    <source src="معرض/WhatsApp Video 2026-02-25 at 3.40.22 PM.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div class="video-container">
+  <video controls>
+    <source src="معرض/WhatsApp Video 2026-02-25 at 3.42.38 PM.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div class="quote">You are my today and all of my tomorrows ❤️</div>
+<div class="quote">Every love story is beautiful, but ours is my favorite 💕</div>
+<div class="quote">I fall for you more every day 💗</div>
+</div>
+
+<script>
+const correctPassword="29/04/2006";
+
+/* LOGIN */
+function login(){
+let p=document.getElementById("pass").value;
+if(p===correctPassword){
+document.getElementById("login").style.opacity="0";
+setTimeout(()=>{
+document.getElementById("login").style.display="none";
+document.getElementById("main").style.display="block";
+document.getElementById("music").volume=0.2;
+document.getElementById("music").play();
+startCountdown();
+quotes();
+fallingElements();
+},1000);
+}else{
+document.getElementById("error").innerText="Nooo 😘 that's not your birthday!";
+}
+}
+
+/* 💖 Hearts + 🌹 Petals */
+function fallingElements(){
+setInterval(()=>{
+let e=document.createElement("div");
+e.className="falling";
+e.innerHTML=Math.random()>0.5?"❤️":"🌹";
+e.style.left=Math.random()*100+"vw";
+e.style.fontSize=(Math.random()*25+15)+"px";
+e.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),8000);
+},300);
+}
+
+/* 🌟 SPARKLES */
+setInterval(()=>{
+let s=document.createElement("div");
+s.className="sparkle";
+s.innerHTML="✨";
+s.style.left=Math.random()*100+"vw";
+s.style.fontSize=(Math.random()*10+5)+"px";
+document.body.appendChild(s);
+setTimeout(()=>s.remove(),4000);
+},200);
+
+/* COUNTDOWN */
+function startCountdown(){
+let nextBirthday=new Date("April 29, 2026 00:00:00").getTime();
+setInterval(()=>{
+let now=new Date().getTime();
+let distance=nextBirthday-now;
+if(distance<0){
+document.getElementById("countdown").innerHTML="🎉 Happy Birthday ❤️";
+confetti();
+return;
+}
+let days=Math.floor(distance/(1000*60*60*24));
+let hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+let minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+let seconds=Math.floor((distance%(1000*60))/1000);
+document.getElementById("countdown").innerHTML=
+days+" Days 💕 "+hours+" Hours 💗 "+minutes+" Minutes 💖 "+seconds+" Seconds ❤️";
+},1000);
+}
+
+/* 🎆 CONFETTI */
+function confetti(){
+const colors=["💖","💗","💘","💝","💞"];
+for(let i=0;i<150;i++){
+let c=document.createElement("div");
+c.className="falling";
+c.innerHTML=colors[Math.floor(Math.random()*colors.length)];
+c.style.left=Math.random()*100+"vw";
+c.style.fontSize=(Math.random()*30+15)+"px";
+c.style.animationDuration="3s";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),5000);
+}
+}
+
+/* SECRET MESSAGE */
+function showSecret(){
+let s=document.getElementById("secret");
+s.style.display="block";
+s.classList.add("show");
+confetti();
+}
+
+/* QUOTES */
+function quotes(){
+let q=document.querySelectorAll(".quote");
+q.forEach((e,i)=>{
+setTimeout(()=>e.classList.add("show"),i*2500);
+});
+}
+</script>
+
+</body>
+</html>
